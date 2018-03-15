@@ -1,0 +1,24 @@
+{
+  "name": "taxminion",
+  "version": "1.0.0",
+  "description": "calculate your crypto tax",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holyoak/tax-minion.git"
+  },
+  "author": "holyoak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/holyoak/tax-minion/issues"
+  },
+  "homepage": "https://github.com/holyoak/tax-minion#readme",
+  "dependencies": {
+    "ccxt": "^1.11.104",
+    "chalk": "^2.3.2"
+  }
+}
