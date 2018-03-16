@@ -12,7 +12,7 @@ module.exports = {
  */
 function parse (userID, client, exKey) {
   return new Promise(function (resolve, reject) {
-    client.loadMarkets()
+    client.fetchBalance()
       .then((data) => {
         resolve(parseData(userID, data, exKey))
       })
