@@ -4,10 +4,7 @@ import json
 import sys
 import os
 
-debug_bypass = True
-DEFAULT_EXCHANGE = 'Enter the name of the exchange here.'
-DEFAULT_PUB_KEY = 'Enter public key here.'
-DEFAULT_SECRET = 'Enter private key here.'
+
 logging.basicConfig(format="%(asctime)s - %(message)s")
 logger = logging.getLogger('exchanges')
 logger.setLevel(logging.INFO)
