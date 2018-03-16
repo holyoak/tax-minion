@@ -1,0 +1,566 @@
+[
+    {
+        "id": "BCH-BTC",
+        "precision": {
+            "price": 5,
+            "amount": 8
+        },
+        "quote": "BTC",
+        "base": "BCH",
+        "symbol": "BCH/BTC",
+        "taker": 0.0025,
+        "info": {
+            "id": "BCH-BTC",
+            "quote_currency": "BTC",
+            "min_market_funds": "0.001",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "200",
+            "base_min_size": "0.01",
+            "max_market_funds": "30",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BCH/BTC",
+            "quote_increment": "0.00001",
+            "base_currency": "BCH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 1e-05
+            },
+            "amount": {
+                "max": 200.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 30.0,
+                "min": 0.001
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "BCH-USD",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "USD",
+        "base": "BCH",
+        "symbol": "BCH/USD",
+        "taker": 0.0025,
+        "info": {
+            "id": "BCH-USD",
+            "quote_currency": "USD",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "350",
+            "base_min_size": "0.01",
+            "max_market_funds": "1000000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BCH/USD",
+            "quote_increment": "0.01",
+            "base_currency": "BCH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 350.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 1000000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "BTC-EUR",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "EUR",
+        "base": "BTC",
+        "symbol": "BTC/EUR",
+        "taker": 0.0025,
+        "info": {
+            "id": "BTC-EUR",
+            "quote_currency": "EUR",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "50",
+            "base_min_size": "0.001",
+            "max_market_funds": "600000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BTC/EUR",
+            "quote_increment": "0.01",
+            "base_currency": "BTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 50.0,
+                "min": 0.001
+            },
+            "cost": {
+                "max": 600000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "BTC-GBP",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "GBP",
+        "base": "BTC",
+        "symbol": "BTC/GBP",
+        "taker": 0.0025,
+        "info": {
+            "id": "BTC-GBP",
+            "quote_currency": "GBP",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "20",
+            "base_min_size": "0.001",
+            "max_market_funds": "200000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BTC/GBP",
+            "quote_increment": "0.01",
+            "base_currency": "BTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 20.0,
+                "min": 0.001
+            },
+            "cost": {
+                "max": 200000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "BTC-USD",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "USD",
+        "base": "BTC",
+        "symbol": "BTC/USD",
+        "taker": 0.0025,
+        "info": {
+            "id": "BTC-USD",
+            "quote_currency": "USD",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "70",
+            "base_min_size": "0.001",
+            "max_market_funds": "1000000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BTC/USD",
+            "quote_increment": "0.01",
+            "base_currency": "BTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 70.0,
+                "min": 0.001
+            },
+            "cost": {
+                "max": 1000000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "ETH-BTC",
+        "precision": {
+            "price": 5,
+            "amount": 8
+        },
+        "quote": "BTC",
+        "base": "ETH",
+        "symbol": "ETH/BTC",
+        "taker": 0.003,
+        "info": {
+            "id": "ETH-BTC",
+            "quote_currency": "BTC",
+            "min_market_funds": "0.001",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "600",
+            "base_min_size": "0.01",
+            "max_market_funds": "50",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "ETH/BTC",
+            "quote_increment": "0.00001",
+            "base_currency": "ETH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 1e-05
+            },
+            "amount": {
+                "max": 600.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 50.0,
+                "min": 0.001
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "ETH-EUR",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "EUR",
+        "base": "ETH",
+        "symbol": "ETH/EUR",
+        "taker": 0.003,
+        "info": {
+            "id": "ETH-EUR",
+            "quote_currency": "EUR",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "400",
+            "base_min_size": "0.01",
+            "max_market_funds": "400000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "ETH/EUR",
+            "quote_increment": "0.01",
+            "base_currency": "ETH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 400.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 400000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "ETH-USD",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "USD",
+        "base": "ETH",
+        "symbol": "ETH/USD",
+        "taker": 0.003,
+        "info": {
+            "id": "ETH-USD",
+            "quote_currency": "USD",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "700",
+            "base_min_size": "0.01",
+            "max_market_funds": "1000000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "ETH/USD",
+            "quote_increment": "0.01",
+            "base_currency": "ETH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 700.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 1000000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "LTC-BTC",
+        "precision": {
+            "price": 5,
+            "amount": 8
+        },
+        "quote": "BTC",
+        "base": "LTC",
+        "symbol": "LTC/BTC",
+        "taker": 0.003,
+        "info": {
+            "id": "LTC-BTC",
+            "quote_currency": "BTC",
+            "min_market_funds": "0.001",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "2000",
+            "base_min_size": "0.1",
+            "max_market_funds": "30",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "LTC/BTC",
+            "quote_increment": "0.00001",
+            "base_currency": "LTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 1e-05
+            },
+            "amount": {
+                "max": 2000.0,
+                "min": 0.1
+            },
+            "cost": {
+                "max": 30.0,
+                "min": 0.001
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "LTC-EUR",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "EUR",
+        "base": "LTC",
+        "symbol": "LTC/EUR",
+        "taker": 0.003,
+        "info": {
+            "id": "LTC-EUR",
+            "quote_currency": "EUR",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "1000",
+            "base_min_size": "0.1",
+            "max_market_funds": "200000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "LTC/EUR",
+            "quote_increment": "0.01",
+            "base_currency": "LTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 1000.0,
+                "min": 0.1
+            },
+            "cost": {
+                "max": 200000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "LTC-USD",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "USD",
+        "base": "LTC",
+        "symbol": "LTC/USD",
+        "taker": 0.003,
+        "info": {
+            "id": "LTC-USD",
+            "quote_currency": "USD",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "4000",
+            "base_min_size": "0.1",
+            "max_market_funds": "1000000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "LTC/USD",
+            "quote_increment": "0.01",
+            "base_currency": "LTC"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 4000.0,
+                "min": 0.1
+            },
+            "cost": {
+                "max": 1000000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    },
+    {
+        "id": "BCH-EUR",
+        "precision": {
+            "price": 2,
+            "amount": 8
+        },
+        "quote": "EUR",
+        "base": "BCH",
+        "symbol": "BCH/EUR",
+        "taker": 0.0025,
+        "info": {
+            "id": "BCH-EUR",
+            "quote_currency": "EUR",
+            "min_market_funds": "10",
+            "cancel_only": false,
+            "status": "online",
+            "post_only": false,
+            "status_message": null,
+            "base_max_size": "120",
+            "base_min_size": "0.01",
+            "max_market_funds": "200000",
+            "margin_enabled": false,
+            "limit_only": false,
+            "display_name": "BCH/EUR",
+            "quote_increment": "0.01",
+            "base_currency": "BCH"
+        },
+        "percentage": true,
+        "fee_loaded": false,
+        "tierBased": true,
+        "maker": 0.0,
+        "limits": {
+            "price": {
+                "max": null,
+                "min": 0.01
+            },
+            "amount": {
+                "max": 120.0,
+                "min": 0.01
+            },
+            "cost": {
+                "max": 200000.0,
+                "min": 10.0
+            }
+        },
+        "active": true
+    }
+]
