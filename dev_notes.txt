@@ -1,0 +1,7 @@
+milo 16/03/18
+
+i think i have figured out how to add the fetchMyTrades functionality to ccxt/bittrex, but the bittrex API limits the history to 30 days, so from a lib standpoint it may be better to leave it disabled
+
+WHOOPS - lines 23 & 24 of exchanges.py create a hard coded object reference.  not all exchanges use the same two properties.  the entire property needs to be passed to the constructor whole (line 29 of app.js).  the onus is on the user/developer to configure the auth file correctly.
+
+i purged a bunch of packages out of your python dir.  dont want to be storing data or dependency packages in the repo.  also refactored the repo to match the ccxt structure
