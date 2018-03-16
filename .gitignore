@@ -1,3 +1,5 @@
 data
+nodejs/data
 node_modules
+python/output
 user*

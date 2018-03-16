@@ -26,18 +26,18 @@ function parse (userID, client, exKey) {
  * @return {Object}               app state fragment
  */
 function parseData (userID, data, exKey) {
-  return data
-  // const res = {
-  //   flag: 'load markets',
-  //   data: { id: exKey }
-  // }
-  // switch (ID) {
-  //   case 'gdax':
-  //     res.data.markets = Gdax.parseMarkets(data)
-  //     return res
-  //   default:
-  //     const msg = '/ClientParser/Markets switch condition not met'
-  //     console.error(chalk.red.bold(msg))
-  //     return ({ err: 1, m: msg })
-  // }
+  const res = {}
+  // remove redundant data
+  if (data.info) delete data.info
+  if (data.free) delete data.free
+  if (data.total) delete data.total
+  if (data.used) delete data.used
+  // remove zero balances
+  for (const asset in data) {
+    if (!(Number(data[asset].total) > 0.00000001)) delete data[asset]
+  }
+  res.data = data
+  res.exKey = exKey
+  res.userID = userID
+  return res
 }
