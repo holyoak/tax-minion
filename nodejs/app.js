@@ -1,13 +1,19 @@
-'use strict';
+'use strict'
+// for the pretty colors
 const chalk = require('chalk')
+// the main dependency
 const ccxt = require('ccxt')
+// native node fileserver
 const fs = require('fs')
+// to prettify the output
 const jPretty = require('json-pretty')
 
 const user = require('../userAuth.json')
 const config = require('../config.json')
+// the Accounts logic, should be able to plug in fetchMyTrades module in same manner
 const Accounts = require('./Accounts')
 
+// global count of number of accounts for use in loops
 const EOF = Object.keys(user.accounts).length
 // global result object
 const res = {}
@@ -17,10 +23,11 @@ const logTarg = config.logDir.concat('/\\.log.txt')
 init(buildData)
 
 function init(callback) {
+  // clear and init user authed clients
   user.clients = {}
   console.log(chalk.green('Getting info for ' + user.name + '...'))
 
-  // loop thru exchange accounts
+  // loop thru exchange account keys
   for (const exchangeID in user.accounts) {
     console.log('Found keys for ' + JSON.stringify(exchangeID))
     const keys = user.accounts[exchangeID]
@@ -28,6 +35,7 @@ function init(callback) {
     /* eslint-disable new-cap */
     user.clients[exchangeID] = new ccxt[exchangeID](keys)
     // fetch available Accounts and related data
+    // clear and init response accounts object
     res.accounts = {}
     Accounts.parse(user.id, user.clients[exchangeID], exchangeID)
       .then((data) => { callback(data) })
