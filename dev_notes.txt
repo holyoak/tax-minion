@@ -5,3 +5,13 @@ i think i have figured out how to add the fetchMyTrades functionality to ccxt/bi
 WHOOPS - lines 23 & 24 of exchanges.py create a hard coded object reference.  not all exchanges use the same two properties.  the entire property needs to be passed to the constructor whole (line 29 of app.js).  the onus is on the user/developer to configure the auth file correctly.
 
 i purged a bunch of packages out of your python dir.  dont want to be storing data or dependency packages in the repo.  also refactored the repo to match the ccxt structure
+
+waffle 17/03/18
+
+I fixed the object reference. Should be good now, sorry about that!
+
+However, when testing the data on gdax, the base64 decoded incorrectly. I'm not entirely positive if this only happens when the
+API keys are invalid, so for now, I skipped the error. If it does only happen when the API keys are invalid, I'll merge the exceptions
+in lines 35 and 51 with the ones above them :]
+
+I'll try to implement DRY soon - I realize it is a bit cluttered now haha
