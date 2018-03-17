@@ -29,7 +29,8 @@ THEN contact me with the .pub key and I will add you to the repo
 
 then append to or create the file '~/.ssh/config' so it contains
 
-```host git.holyoak
+```
+host git.holyoak
     user git
     hostname holyoak.net
     port 7822
