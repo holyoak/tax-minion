@@ -60,11 +60,12 @@ function buildData(data) {
 function writeData(target) {
   const data = jPretty(res[target])
   target = logTarg.replace('\\', target)
-  console.log(chalk.blue('Writing data to -> ') + target)
   let writeStream = fs.createWriteStream(target)
   writeStream.write(data, 'utf8')
+  writeStream.end()
   writeStream.on('finish', function() {  
-    console.log(chalk.blue('Data written to ' + target))
+    console.log(chalk.blue('Data written to -> ') + target)
+    gracefulExit()
   })
 }
 
