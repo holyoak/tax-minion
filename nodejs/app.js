@@ -19,12 +19,22 @@ const EOF = Object.keys(user.accounts).length
 const res = {}
 // target for results files
 const logTarg = config.logDir.concat('/\\.log.txt')
+
+// set global error handler
+process.on('unhandledRejection', error => {
+  // Will print "unhandledRejection err is not defined"
+  console.log(chalk.red('Unhandled Rejection: '), error.message);
+})
+
 // start app
 init(buildData)
 
 function init(callback) {
   // clear and init user authed clients
   user.clients = {}
+  // clear and init response accounts object
+  res.accounts = {}
+
   console.log(chalk.green('Getting info for ' + user.name + '...'))
 
   // loop thru exchange account keys
@@ -35,8 +45,6 @@ function init(callback) {
     /* eslint-disable new-cap */
     user.clients[exchangeID] = new ccxt[exchangeID](keys)
     // fetch available Accounts and related data
-    // clear and init response accounts object
-    res.accounts = {}
     Accounts.parse(user.id, user.clients[exchangeID], exchangeID)
       .then((data) => { callback(data) })
   }
@@ -44,17 +52,15 @@ function init(callback) {
 }
 
 function buildData(data) {
-  if (data.err) console.err(chalk.red(err))
-  else {
-  	res.accounts[data.exKey] = data.data
-  	if (Object.keys(res.accounts).length === EOF) writeData('accounts')
-  }
+  if (data.err) console.error(chalk.red(data.err))
+  res.accounts[data.exKey] = data.data ? data.data : data.err
+  if (Object.keys(res.accounts).length === EOF) writeData('accounts')
 }
 
 function writeData(target) {
-  console.log('writing data')
   const data = jPretty(res[target])
   target = logTarg.replace('\\', target)
+  console.log(chalk.blue('Writing data to -> ') + target)
   let writeStream = fs.createWriteStream(target)
   writeStream.write(data, 'utf8')
   writeStream.on('finish', function() {  

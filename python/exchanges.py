@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import ccxt
 from ccxt.base.errors import AuthenticationError
 import binascii
@@ -5,7 +6,6 @@ import logging
 import json
 import sys
 import os
-
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] - %(message)s")
 logger = logging.getLogger('exchanges')

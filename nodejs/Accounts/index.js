@@ -1,5 +1,4 @@
 'use strict'
-const chalk = require('chalk')
 
 module.exports = {
   parse: parse
@@ -12,9 +11,15 @@ module.exports = {
  */
 function parse (userID, client, exKey) {
   return new Promise(function (resolve, reject) {
+    const res = {userID: userID, exKey: exKey}
     client.fetchBalance()
       .then((data) => {
-        resolve(parseData(userID, data, exKey))
+        res.data = data
+        resolve(parseData(res))
+      })
+      .catch((err) => {
+        res.err = err
+        resolve(res)
       })
   })
 }
@@ -25,19 +30,15 @@ function parse (userID, client, exKey) {
  * @param  {AppID}    exKey       App exchange key
  * @return {Object}               app state fragment
  */
-function parseData (userID, data, exKey) {
-  const res = {}
+function parseData (res) {
   // remove redundant data
-  if (data.info) delete data.info
-  if (data.free) delete data.free
-  if (data.total) delete data.total
-  if (data.used) delete data.used
+  if (res.data.info) delete res.data.info
+  if (res.data.free) delete res.data.free
+  if (res.data.total) delete res.data.total
+  if (res.data.used) delete res.data.used
   // remove zero balances
-  for (const asset in data) {
-    if (!(Number(data[asset].total) > 0.00000001)) delete data[asset]
+  for (const asset in res.data) {
+    if (!(Number(res.data[asset].total) > 0.00000001)) delete res.data[asset]
   }
-  res.data = data
-  res.exKey = exKey
-  res.userID = userID
   return res
 }
