@@ -1,3 +1,4 @@
 {
-  "logDir": "data"
+  "dataDir": "data",
+  "logDir": "log"
 }

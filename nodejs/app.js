@@ -18,12 +18,15 @@ const EOF = Object.keys(user.accounts).length
 // global result object
 const res = {}
 // target for results files
-const logTarg = config.logDir.concat('/\\.log.txt')
+const dataTarg = config.dataDir.concat('/\\.data.txt')
+// logging
+let logger = fs.createWriteStream(config.logDir + '/tax-minion.log.txt', {'flags': 'a'})
 
 // set global error handler
 process.on('unhandledRejection', error => {
   // Will print "unhandledRejection err is not defined"
-  console.log(chalk.red('Unhandled Rejection: '), error.message);
+  console.log(chalk.red('Unhandled Rejection: '), error.message)
+  log('Unhandled Rejection: ' + error.message)
 })
 
 // start app
@@ -36,6 +39,7 @@ function init(callback) {
   res.accounts = {}
 
   console.log(chalk.green('Getting info for ' + user.name + '...'))
+  log('Getting info for ' + user.name + '...')
 
   // loop thru exchange account keys
   for (const exchangeID in user.accounts) {
@@ -52,14 +56,17 @@ function init(callback) {
 }
 
 function buildData(data) {
-  if (data.err) console.error(chalk.red(data.err))
+  if (data.err) {
+    console.error(chalk.red(data.err))
+    log(data.err)
+  }
   res.accounts[data.exKey] = data.data ? data.data : data.err
   if (Object.keys(res.accounts).length === EOF) writeData('accounts')
 }
 
 function writeData(target) {
   const data = jPretty(res[target])
-  target = logTarg.replace('\\', target)
+  target = dataTarg.replace('\\', target)
   let writeStream = fs.createWriteStream(target)
   writeStream.write(data, 'utf8')
   writeStream.end()
@@ -69,7 +76,14 @@ function writeData(target) {
   })
 }
 
+function log(data) {
+  logger.write(nowstamp() + data + '\n', 'utf8')
+}
+function nowstamp() {return (new Date(Date.now()).toISOString() + ': ')}
+
 function gracefulExit() {
   console.log(chalk.green('Process success'))
+  log(user.name + ' Process success')
+  logger.end()
   process.exit(0)
 }
