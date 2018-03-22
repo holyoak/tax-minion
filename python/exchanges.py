@@ -31,8 +31,9 @@ class User:
             logger.info('Attempting to fetch trades for site "{}".'.format(exc_name))
             try:
                 exchange = getattr(ccxt, exc_name)(keys)
+                logger.info('Found site "{}".'.format(exc_name))
                 if exchange.has['fetchMyTrades']:
-                    with open("output/" + exc_name + "_trade_data_.json", 'w') as f:
+                    with open("output/" + exc_name + "_trade_data.json", 'w') as f:
                         json.dump(exchange.fetchMyTrades(), f, indent=4)
                         logger.info('Retrieved trades.\n')
                 else:
@@ -48,9 +49,24 @@ class User:
             logger.info('Attempting to fetch balances for site "{}".'.format(exc_name))
             try:
                 exchange = getattr(ccxt, exc_name)(keys)
+                logger.info('Found site "{}".'.format(exc_name))
                 if exchange.has['fetchBalance']:
-                    with open("output/" + exc_name + "_balance_data_.json", 'w') as f:
-                        json.dump(exchange.fetchBalance(), f, indent=4)
+                    with open("output/" + exc_name + "_balance_data.json", 'w') as f:
+                        data = exchange.fetchBalance()
+                        for site in list(data.keys()):
+                            for key, balance in list(data[site].items()):
+                                if type(balance) == dict:
+                                    for k2, b2 in list(data[site][key].items()):
+                                        if float(b2) == 0:
+                                            del data[site][key][k2]
+                                    if not data[site][key]:
+                                        del data[site][key]
+                                    continue
+                                if float(balance) == 0:
+                                    del data[site][key]
+                            if not data[site]:
+                                del data[site]
+                        json.dump(data, f, indent=4)
                         logger.info('Retrieved balances.\n')
                 else:
                     logger.error('Site does not support fetching balance data.\n')

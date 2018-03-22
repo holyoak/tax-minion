@@ -5,3 +5,4 @@ node_modules
 python/data
 python/output
 user*
+.idea/
