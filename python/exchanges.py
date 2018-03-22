@@ -77,7 +77,7 @@ class User:
 
 def load_data():
     """Opens user data, creates user object(s), and returns them."""
-    with open('../userAuth.json', 'r') as f:
+    with open('./userAuth.json', 'r') as f:
         data = json.load(f)
         user = User(data['_id'], data['name'], data['accounts'])
         return user
